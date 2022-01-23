@@ -9,8 +9,6 @@ const addNewBackgroundLabel = document.getElementById(`add-new-background-label`
 const modal = document.getElementById(`modal`);
 const uploadDiv = document.getElementById(`upload-div`);
 const closeModal = document.getElementById(`close-modal`);
-// const getImageFromInput = document.getElementById(`upload-background-image`);
-// const submit = document.getElementById(`submit`);
 const uploadImageForm = document.getElementById(`upload-image-form`);
 const backgroundImage = document.getElementById(`background-image`);
 
@@ -27,7 +25,6 @@ addNewBackground.addEventListener(`click`, () => {
 addNewBackground.addEventListener(`mouseout`, () => {
     addNewBackgroundLabel.classList.add(`hidden`);
 });
-
 
 let isOutside = true;
 
@@ -63,7 +60,7 @@ uploadImageForm.addEventListener(`submit`, async(e) => {
     }
     
     if (upload.statusCode === `23505`){
-        alert(`duplicate image detected...aborting`);
+        alert(`duplicate image name detected...aborting`);
         return;
     } else {
         await uploadToTable(imageObj);
@@ -74,13 +71,11 @@ uploadImageForm.addEventListener(`submit`, async(e) => {
 })
 
 window.addEventListener(`load`, async() => {
-    let imageArrObj = [];
-
-    imageArrObj = await getImageArr();
+    const imageArrObj = await getImageArr();
     const randoNumbo = Math.floor(Math.random() * imageArrObj.length);
-    console.log(imageArrObj[randoNumbo].url);
+
     backgroundImage.src = imageArrObj[randoNumbo].url;
     backgroundImage.classList.remove(`hidden`);
-    setInterval(function() { window.location.reload() }, 30000);
-});
 
+    setInterval(function() { window.location.reload() }, 30000);
+})
