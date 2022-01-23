@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+}
+
+body{
+    background-color: midnightblue;
+}
+
+#background-image{
+
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#add-new-background{
+    cursor: pointer;
+    transition: transform 0.125s ease-in-out;
+    font-size: 2rem;
+}
+
+#add-new-background:hover, #close-modal:hover{
+    transform: rotate(360deg);
+}
+
+#add-new-background-label{
+    transition: opacity .125s ease-in-out;
+    text-shadow: 
+        1px 1px 1px midnightblue,
+        1px -1px 1px midnightblue,
+        -1px 1px 1px midnightblue,
+        -1px -1px 1px midnightblue,
+        2px 2px 1px midnightblue,
+        2px -2px 1px midnightblue,
+        -2px 2px 1px midnightblue,
+        -2px -2px 1px midnightblue
+}
+
+#add-image-div{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #80000088;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-div{
+    background-color: red;
+    z-index: 10;
+    border-radius: 3px;
+    opacity: 1.0;
+}
+
+.upload-header-div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: midnightblue;
+    padding: 10px 20px;
+    color: white;
+    opacity: 1;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.close-modal{
+    cursor: pointer;
+    transition: transform 0.125s ease-in-out;
+}
+
+.hidden{
+    opacity: 0.0;
+    pointer-events: none;
+}
+
+.upload-image-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+    padding: 100px;
+}
+
+input[type=file]::file-selector-button{
+    background-color: midnightblue;
+    color: white;
+    padding: 5px 10px;
+}
+
+input{
+    background-color: darkred;
+}
+
+
+button{
+    background-color: midnightblue;
+    color: white;
+    padding: 5px 10px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <title>Background Randomizer</title>
+</head>
+<body>
+    <img src="" class="hidden" alt="" id="background-image">
+    <div class="add-image-div" id="add-image-div">
+        <p class="add-new-background-label hidden" id="add-new-background-label"></p><span class="add-new-background" id="add-new-background">➕</span>
+    </div>
+    <section class="modal hidden" id="modal">
+        <div class="upload-div" id="upload-div">
+            <div class="upload-header-div" id="upload-header-div">
+                <h3 class="header-text" id="header-text">Upload an Image</h3>
+                <h3 class="close-modal" id="close-modal">❌</h3>
+            </div>
+            <form class="upload-image-form" id="upload-image-form">
+                Pick an Image:
+                <input type="file" accept="image/*" id="upload-background-image" name="upload-background-image" required>
+                <button class="submit" id="submit">Save</button>
+            </div>
+        </div>
+
+    </section>
+</body>
+    <script type="module" src="./script/script.js"></script>
+</html>
